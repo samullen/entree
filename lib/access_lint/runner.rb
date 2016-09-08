@@ -1,6 +1,8 @@
 module AccessLint
   class Runner
-    RUNNER_PATH = File.expand_path("../../../vendor/access-lint/bin/auditor.js", __FILE__)
+    # RUNNER_PATH = File.expand_path("../../../vendor/access-lint/bin/auditor.js", __FILE__)
+    # RUNNER_PATH = File.expand_path("../../../vendor/HTML_CodeSniffer/build/HTMLCS_Run.js", __FILE__)
+    RUNNER_PATH = File.expand_path("../../../vendor/HTML_CodeSniffer/Contrib/PhantomJS/HTMLCS_Run.js", __FILE__)
     attr_reader :output
 
     def initialize(target)
@@ -8,7 +10,7 @@ module AccessLint
     end
 
     def run
-      @output = `phantomjs #{RUNNER_PATH} #{@target}`
+      @output = `phantomjs #{RUNNER_PATH} #{@target} Sectino508 json`
       return if audit_success?
 
       if !phantomjs_installed?
