@@ -3,7 +3,7 @@ $: << File.expand_path("../lib/", __FILE__)
 
 Signal.trap("INT") { exit 1 } #
 
-require 'access_lint'
-require 'access_lint/cli'
+require 'entree'
+require 'entree/cli'
 
-AccessLint::CLI.start(ARGV)
+Entree::CLI.start(ARGV)
