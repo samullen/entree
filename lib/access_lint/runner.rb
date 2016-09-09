@@ -10,7 +10,7 @@ module AccessLint
     end
 
     def run
-      @output = `phantomjs #{RUNNER_PATH} #{@target} Section508 json`
+      @output = `phantomjs #{RUNNER_PATH} #{@target} WCAG2AA json`
       return if audit_success?
 
       if !phantomjs_installed?
