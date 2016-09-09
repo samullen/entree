@@ -10,6 +10,7 @@ describe Entree::Audit do
 
   describe '#run' do
     it 'return a parsed set of results' do
+      skip
       # target = double
       # output = JSON.generate([{status: 'passing', foo: 'bar'}])
 
