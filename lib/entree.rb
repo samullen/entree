@@ -1,8 +1,8 @@
-require "access_lint/version"
+require "entree/version"
 
-module AccessLint
-  autoload :Audit, 'access_lint/runner'
-  autoload :Runner, 'access_lint/audit'
+module Entree
+  autoload :Audit, 'entree/runner'
+  autoload :Runner, 'entree/audit'
 
   class Error < StandardError; end
   class AuditError < Error; end
