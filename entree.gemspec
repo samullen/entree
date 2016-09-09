@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Samuel Mullen"]
   spec.email         = ["samullen@gmail.com"]
   spec.description   = %q{Run an accessibility audit on a file or URL from the command line.}
-  spec.summary       = %q{Entreé runs HTML_CodeSniffer assertions on a page via PhantomJS}
+  spec.summary       = %q{Entree runs HTML_CodeSniffer assertions on a page via PhantomJS}
   spec.homepage      = "https://github.com/samullen/entree"
   spec.license       = "MIT"
 

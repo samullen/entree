@@ -1,6 +1,6 @@
 # entree.rb
 
-Entreé is a ruby gem allowing accessibility audits to be run on URLs or files,
+Entree is a ruby gem allowing accessibility audits to be run on URLs or files,
 from the command line or within your Ruby applications.
 
 This library was copied from Cameron Cundiff's (@ckundo) excellent
@@ -10,7 +10,7 @@ everyone.
 
 ## About
 
-Entreé uses the
+Entree uses the
 [HTML_CodeSniffer](https://github.com/squizlabs/HTML_CodeSniffer) client-side JS
 application to make assertions on the DOM via PhantomJS. The rules that are applied are [listed below](#rules).
 
