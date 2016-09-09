@@ -1,10 +1,12 @@
-# entreé.rb
+# entree.rb
 
 Entreé is a ruby gem allowing accessibility audits to be run on URLs or files,
 from the command line or within your Ruby applications.
 
 This library was copied from Cameron Cundiff's (@ckundo) excellent
-[access_lint.rb](https://github.com/accesslint/accesslint.rb) project.
+[access_lint.rb](https://github.com/accesslint/accesslint.rb) project. It has
+been renamed to reflect what it's attempting to provide: entrance to the web for
+everyone.
 
 ## About
 
