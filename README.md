@@ -1,10 +1,16 @@
-# accesslint.rb [![Gem Version](https://badge.fury.io/rb/access_lint.svg)](http://badge.fury.io/rb/access_lint) [![Code Climate](https://codeclimate.com/repos/52c4c7ca6956804bb2000905/badges/5a971515dcfd43cf57e1/gpa.svg)](https://codeclimate.com/repos/52c4c7ca6956804bb2000905/feed)
+# entreé.rb
 
-Run web accessibility audits on urls or files, from the command line or within Ruby.
+Entreé is a ruby gem allowing accessibility audits to be run on URLs or files,
+from the command line or within your Ruby applications.
+
+This library was copied from Cameron Cundiff's (@ckundo) excellent
+[access_lint.rb](https://github.com/accesslint/accesslint.rb) project.
 
 ## About
 
-AccessLint uses the [Accessibility Developer Tools](https://github.com/GoogleChrome/accessibility-developer-tools) javascript library to make assertions on the DOM via PhantomJS. The rules that are applied are [listed below](#rules).
+Entreé uses the
+[HTML_CodeSniffer](https://github.com/squizlabs/HTML_CodeSniffer) client-side JS
+application to make assertions on the DOM via PhantomJS. The rules that are applied are [listed below](#rules).
 
 ## Installation
 
@@ -14,7 +20,7 @@ First, install PhantomJS ([full guide](http://phantomjs.org/)). On OS X:
 
 Then install the rubygem:
 
-    $ gem install access_lint
+    $ gem install entree
 
 ## Usage
 
@@ -22,7 +28,7 @@ Then install the rubygem:
 
 From the command line, specify a url or filename to be audited:
 
-    $ access_lint audit http://twitter.com # url or a path to a file
+    $ entree audit http://archaccessibility.com # url or a path to a file
     # results ...
 
 ### Ruby
@@ -30,9 +36,9 @@ From the command line, specify a url or filename to be audited:
 Run the audit from a Ruby application like so
 
     $ irb
-    > require 'access_lint'
+    > require 'entree'
     => true
-    > AccessLint::Audit.new('http://twitter.com').run
+    > Entree::Audit.new('http://archaccessibility.com').run
     => results ...
 
 ### Results Object
@@ -110,8 +116,6 @@ Code                       | Title
 [AX_VIDEO_01]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_video_01
 
 ## Roadmap
-
-Visit the project backlog: <https://www.pivotaltracker.com/s/projects/985186>.
 
 ## Contributing
 
