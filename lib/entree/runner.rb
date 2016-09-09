@@ -1,4 +1,4 @@
-module AccessLint
+module Entree
   class Runner
     RUNNER_PATH = File.expand_path("../../../vendor/HTML_CodeSniffer/Contrib/PhantomJS/HTMLCS_Run.js", __FILE__)
     attr_reader :output
@@ -12,9 +12,9 @@ module AccessLint
       return if audit_success?
 
       if !phantomjs_installed?
-        fail AccessLint::RunnerError.new("Please install PhantomJS. Visit http://phantomjs.org/ for instructions.")
+        fail Entree::RunnerError.new("Please install PhantomJS. Visit http://phantomjs.org/ for instructions.")
       else
-        fail AccessLint::RunnerError.new("PhantomJS exited without success: #{@output}")
+        fail Entree::RunnerError.new("PhantomJS exited without success: #{@output}")
       end
     end
 
