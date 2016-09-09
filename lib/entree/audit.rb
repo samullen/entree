@@ -14,7 +14,7 @@ module Entree
     end
 
     def runner
-      @runner ||= Runner.new(@target)
+      @runner ||= Runner.new(self.target)
     end
 
     private

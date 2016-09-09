@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require 'entree'
+require "minitest/autorun"
+require "entree"
 
 describe Entree::Audit do
   describe "Initialization" do
