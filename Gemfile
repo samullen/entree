@@ -1,14 +1,10 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in access_lint.gemspec
+# Specify your gem's dependencies in entree.gemspec
 gemspec
 
 group :development do
-  gem "vendorer"
-  gem "rspec"
+  gem "minitest"
   gem "pry"
-  gem "pry-stack_explorer"
   gem "thor"
 end
-
-gem 'coveralls', require: false

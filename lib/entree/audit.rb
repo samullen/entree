@@ -1,7 +1,7 @@
-require 'access_lint'
+require 'entree'
 require 'json'
 
-module AccessLint
+module Entree
   class Audit
     attr_reader :target
 
@@ -14,7 +14,7 @@ module AccessLint
     end
 
     def runner
-      @runner ||= Runner.new(@target)
+      @runner ||= Runner.new(self.target)
     end
 
     private
@@ -30,7 +30,7 @@ module AccessLint
       raw_results.map { |result| result.delete('elements') }
       @results = raw_results.group_by { |result| result['status'] }
     rescue Exception => e
-      raise AccessLint::ParserError.new(e.message)
+      raise Entree::ParserError.new(e.message)
     end
   end
 end

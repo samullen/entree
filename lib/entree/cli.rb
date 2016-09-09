@@ -2,7 +2,7 @@ require 'thor'
 require 'command_line_reporter'
 require 'awesome_print'
 
-module AccessLint
+module Entree
   class CLI < Thor
     include CommandLineReporter
 
