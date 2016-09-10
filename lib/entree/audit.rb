@@ -1,5 +1,5 @@
 require 'entree'
-require 'json'
+require 'oj'
 
 module Entree
   class Audit
@@ -26,9 +26,8 @@ module Entree
     end
 
     def parse_output
-      raw_results = JSON.parse(@output, max_nesting: 200)
-      raw_results.map { |result| result.delete('elements') }
-      @results = raw_results.group_by { |result| result['status'] }
+      raw_results = Oj.load(@output, max_nesting: 200)
+      @results = raw_results.group_by { |result| result['type'] }
     rescue Exception => e
       raise Entree::ParserError.new(e.message)
     end
