@@ -26,7 +26,17 @@ module Entree
     end
 
     def parse_output
-      raw_results = Oj.load(@output, max_nesting: 200)
+      # refactor into new class
+      raw_results = Oj.load(@output).map {|record|
+        if record["code"][0..3] == "WCAG"
+          record["code"].match /(WCAG2A+\.\w+?\.Guideline(\d_\d)\.\2_\d)\.((?:[A-Z]+\d+,?)+)/
+          record["code"] = $1
+          record["techniques"] = $3.split /,/
+        end
+
+        record
+      }
+
       @results = raw_results.group_by { |result| result['type'] }
     rescue Exception => e
       raise Entree::ParserError.new(e.message)
