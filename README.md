@@ -45,22 +45,47 @@ Run the audit from a Ruby application like so
 
 ### Results Object
 
+```
+{
+  "ERROR"=>[
     {
-        "PASS": [                                                           # Status group
-            {
-                "element_names": ["<p class=\"foo\">relevant element</p>"], # applicable DOM elements
-                "severity": "WARNING",                                      # 'WARNING' or 'SEVERE'
-                "status": "PASS",                                           # 'PASS', 'FAIL', or 'NA'
-                "title": "Some description"                                 # rule description
-            },
-            { ... }
-        ],
-        "NA": [ { ... } ],
-        "FAIL": [ { ... }]
-    ]
+      "type"=>"ERROR",
+      "code"=>"WCAG2AA.Principle4.Guideline4_1.4_1_2",
+      "nodeName"=>"input",
+      "id"=>"#mce-EMAIL",
+      "msg"=>"This email input element does not have a name available to an accessibility API. Valid names are: element content.",
+      "outerHTML"=>"<input type=\"email\" value=\"\" name=\"EMAIL\" class=\"required email form-control\" id=\"mce-EMAIL\" placeholder=\"Email address\"></input>",
+      "techniques"=>["H91"]
+    }
+  ],
+  "WARNING"=>[
+    {
+      "type"=>"WARNING",
+      "code"=>"WCAG2AA.Principle1.Guideline1_4.1_4_3",
+      "nodeName"=>"label",
+      "id"=>"",
+      "msg"=>"This element is absolutely positioned and the background color can not be determined. Ensure the contrast ratio between the text and all covered parts of the background are at least 4.5:1.",
+      "outerHTML"=>"<label class=\"sr-only\" for=\"mce-EMAIL\">...</label>",
+      "techniques"=>["G18"]
+    }
+  ],
+  "NOTICE"=>[
+    {
+      "type"=>"NOTICE",
+      "code"=>"WCAG2AA.Principle2.Guideline2_4.2_4_2",
+      "nodeName"=>"title",
+      "id"=>"",
+      "msg"=>"Check that the title element describes the document.",
+      "outerHTML"=>"<title>...</title>",
+      "techniques"=>["H25"]
+    },
+  ]
+}
+```
 
 ## Rules
 
+*Currently displaying access_lint.rb rules* 
 For full descriptions of the audit rules, visit the [Accessibility Developer Tools project wiki](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules).
 
 Code                       | Title
