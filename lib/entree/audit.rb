@@ -31,7 +31,7 @@ module Entree
         if record["code"][0..3] == "WCAG"
           record["code"].match /(WCAG2A+\.\w+?\.Guideline(\d_\d)\.\2_\d)\.((?:[A-Z]+\d+,?)+)/
           record["code"] = $1
-          record["techniques"] = $3.split /,/
+          record["infractions"] = $3.split /,/
         end
 
         record
