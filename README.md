@@ -83,6 +83,15 @@ Run the audit from a Ruby application like so
 }
 ```
 
+## Building
+
+Currently just notes for myself.
+
+From HTML_CodeSnippets.js, 
+
+* copy `HTML_CodeSniffer/Contrib/PhantomJS/HTMLCS_Run.js` to `vendor`
+* copy `HTML_CodeSniffer/build/HTMLCS.js` to `vendor`
+
 ## Rules
 
 *Currently displaying access_lint.rb rules* 
