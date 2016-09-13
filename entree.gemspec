@@ -21,8 +21,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thor", "~> 0.19"
   spec.add_dependency "awesome_print", "~> 1.6"
   spec.add_dependency "command_line_reporter", "~> 3.3"
+  spec.add_dependency "oj", "~> 2.17"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake", "~> 11"
-  spec.add_development_dependency "oj", "~> 2.17"
 end
