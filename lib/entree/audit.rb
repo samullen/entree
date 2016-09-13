@@ -29,9 +29,12 @@ module Entree
       # refactor into new class
       raw_results = Oj.load(@output).map {|record|
         if record["code"][0..3] == "WCAG"
-          record["code"].match /(WCAG2A+\.\w+?\.Guideline(\d_\d)\.\2_\d)\.((?:[A-Z]+\d+,?)+)/
+          record["code"].match /(WCAG2A+\.\w+?\.Guideline(\d_\d)\.\2(_\w)+)\.((?:[A-Z]+\d+,?)+)/
+          if $1.nil? || $1 == ''
+            p record
+          end
           record["code"] = $1
-          record["infractions"] = $3.to_s.split /,/
+          record["infractions"] = $4.to_s.split /,/
         end
 
         record
